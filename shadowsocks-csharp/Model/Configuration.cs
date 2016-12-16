@@ -27,6 +27,7 @@ namespace Shadowsocks.Model
         public bool autoCheckUpdate;
         public bool checkPreRelease;
         public bool isVerboseLogging;
+        public int httpPort;
         public LogViewerConfig logViewer;
         public ProxyConfig proxy;
         public HotkeyConfig hotkey;
@@ -71,6 +72,8 @@ namespace Shadowsocks.Model
                     config.proxy = new ProxyConfig();
                 if (config.hotkey == null)
                     config.hotkey = new HotkeyConfig();
+                if (config.httpPort == 0)
+                    config.httpPort = 8123;
 
                 config.proxy.CheckConfig();
 
